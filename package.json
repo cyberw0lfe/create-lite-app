@@ -1,0 +1,18 @@
+{
+  "name": "create-lite-app",
+  "version": "0.0.1",
+  "description": "Command line tool for generating lightweight apps",
+  "main": "src/cli.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "create-lite-app": "./src/cli.js",
+    "cla": "./src/cli.js"
+  },
+  "author": "Adam Wolfe",
+  "license": "MIT",
+  "dependencies": {
+    "npm": "^6.14.2"
+  }
+}
