@@ -22,5 +22,10 @@ npm.load({
     const { name } = require(`${process.cwd()}/package.json`)
     execCmd(`mkdir ${name}`)
     execCmd(`mv package.json ${name}`)
+    // npm.commands.install(['parcel-bundler'], (err, data) => {
+    //   if(err) console.log('INSTALL ERROR: ', err)
+    //   console.log(data)
+    // })
+    execCmd(`cd ${name}; npm install parcel-bundler`)
   })
 })
