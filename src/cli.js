@@ -2,8 +2,11 @@
 
 const npm = require('npm')
 const { execSync } = require('child_process')
+const fs = require('fs')
 const { green } = require('chalk')
 const dependencies = require('./dependencies.json')
+const scripts = require('./scripts.json')
+const templates = require('./file-templates')
 
 const log = string => green(console.log(string))
 
@@ -16,7 +19,6 @@ const execCmd = cmd => { // add args here too
   } catch(err) {
     console.log('ERROR executing command: ', err)
   }
-  
 }
 
 npm.load({
@@ -30,8 +32,14 @@ npm.load({
 
     log('Creating src directory...')
     execCmd('mkdir src')
+    execCmd('touch src/index.html src/index.js src/App.js')
+    fs.appendFile('./src/index.html', templates.indexHtml)
+    fs.appendFile('./src/index.js', templates.indexJs)
+    fs.appendFile('./src/App.js', templates.app)
 
     log('Adding parcel scripts to package.json...')
     const package = require(`${process.cwd()}/package.json`)
+    Object.keys(scripts).forEach(script => package.scripts[script] = scripts[script])
+    fs.writeFile('./package.json', JSON.stringify(package))
   })
 })
