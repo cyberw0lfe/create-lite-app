@@ -22,7 +22,7 @@ const execCmd = cmd => { // add args here too
 }
 
 npm.load({
-  loaded: false
+  loaded: false,
 }, async err => {
   npm.commands.init(() => {
     log('Installing dependencies...')
@@ -30,12 +30,12 @@ npm.load({
       if(err) console.log('INSTALL ERROR: ', err)
     })
 
-    log('Creating src directory...')
-    execCmd('mkdir src')
-    execCmd('touch src/index.html src/index.js src/App.js')
-    fs.appendFile('./src/index.html', templates.indexHtml)
-    fs.appendFile('./src/index.js', templates.indexJs)
-    fs.appendFile('./src/App.js', templates.app)
+    npm.load({
+      loaded: false,
+      'save-dev': true // this doesn't work
+    }, err => {
+      npm.commands.install(dependencies.baseDev)
+    })
 
     log('Adding parcel scripts to package.json...')
     const package = require(`${process.cwd()}/package.json`)
@@ -43,3 +43,10 @@ npm.load({
     fs.writeFile('./package.json', JSON.stringify(package))
   })
 })
+
+log('Creating src directory...')
+execCmd('mkdir src')
+execCmd('touch src/index.html src/index.js src/App.js')
+fs.appendFile('./src/index.html', templates.indexHtml)
+fs.appendFile('./src/index.js', templates.indexJs)
+fs.appendFile('./src/App.js', templates.app)
