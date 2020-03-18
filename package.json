@@ -1,6 +1,6 @@
 {
   "name": "create-lite-app",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Command line tool for generating lightweight apps",
   "main": "src/cli.js",
   "scripts": {
@@ -11,6 +11,8 @@
     "cla": "./src/cli.js"
   },
   "author": "Adam Wolfe",
+  "homepage": "https://github.com/adamtwolfe/create-lite-app",
+  "issues": "https://github.com/adamtwolfe/create-lite-app/issues",
   "license": "MIT",
   "dependencies": {
     "chalk": "^3.0.0",

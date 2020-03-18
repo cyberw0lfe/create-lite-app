@@ -1,52 +1,43 @@
 #!/usr/bin/env node
 
-const npm = require('npm')
-const { execSync } = require('child_process')
 const fs = require('fs')
-const { green } = require('chalk')
-const dependencies = require('./dependencies.json')
-const scripts = require('./scripts.json')
-const templates = require('./file-templates')
+const npm = require('./util/npm')
+const execCmd = require('./util/execCmd')
+const logger = require('./util/logger')
+const dependencies = require('./resources/dependencies.json')
+const scripts = require('./resources/scripts.json')
+const templates = require('./resources/file-templates')
 
-const log = string => green(console.log(string))
-
-const execCmd = cmd => { // add args here too
-  // const child = spawnSync(cmd, [], { encoding: 'utf8' })
-  try {
-    const child = execSync(cmd, [], { encoding: 'utf8' })
-    if(child.error) console.log('ERROR: ', child.error)
-    return child
-  } catch(err) {
-    console.log('ERROR executing command: ', err)
-  }
+const addParcelScripts = () => {
+  logger.log('Adding parcel scripts to package.json...')
+  const package = require(`${process.cwd()}/package.json`)
+  Object.keys(scripts).forEach(script => 
+    package.scripts[script] = scripts[script])
+  fs.writeFile('./package.json', JSON.stringify(package, null, 2))
 }
 
-npm.load({
-  loaded: false,
-}, async err => {
-  npm.commands.init(() => {
-    log('Installing dependencies...')
-    npm.commands.install(dependencies.base, (err, data) => {
-      if(err) console.log('INSTALL ERROR: ', err)
-    })
+const createSrcDir = () => {
+  logger.log('Creating src directory...')
+  execCmd('mkdir src')
+  execCmd('touch src/index.html src/index.js src/App.js')
+  fs.appendFile('./src/index.html', templates.indexHtml)
+  fs.appendFile('./src/index.js', templates.indexJs)
+  fs.appendFile('./src/App.js', templates.app)
+}
 
-    npm.load({
-      loaded: false,
-      'save-dev': true // this doesn't work
-    }, err => {
-      npm.commands.install(dependencies.baseDev)
-    })
+const run = async () => {
+  await npm.init()
+  await npm.installDep(dependencies.base)
+  
+  // calling execCmd because calling npm.load twice
+  // for normal and dev dependencies doesn't work
+  logger.log('Installing dev dependencies...')
+  execCmd(`npm install ${dependencies.baseDev.join(' ')} --save-dev`)
+  
+  addParcelScripts()
+  createSrcDir()
 
-    log('Adding parcel scripts to package.json...')
-    const package = require(`${process.cwd()}/package.json`)
-    Object.keys(scripts).forEach(script => package.scripts[script] = scripts[script])
-    fs.writeFile('./package.json', JSON.stringify(package))
-  })
-})
+  logger.log('App initialization complete!')
+}
 
-log('Creating src directory...')
-execCmd('mkdir src')
-execCmd('touch src/index.html src/index.js src/App.js')
-fs.appendFile('./src/index.html', templates.indexHtml)
-fs.appendFile('./src/index.js', templates.indexJs)
-fs.appendFile('./src/App.js', templates.app)
+run()
