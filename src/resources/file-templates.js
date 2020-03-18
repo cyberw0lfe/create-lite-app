@@ -20,6 +20,17 @@ ReactDOM.render(<App />, document.getElementById('root'))
 `
 
 const app = `import React from 'react'
+import { BrowserRouter, Route } from 'react-router-dom'
+import Component from './Component'
+
+export default () => (
+  <BrowserRouter>
+    <Route exact path='/' component={Component} />
+  </BrowserRouter>
+)
+`
+
+const component = `import React from 'react'
 
 export default () => (
   <div>
@@ -28,4 +39,4 @@ export default () => (
 )
 `
 
-module.exports = { indexHtml, indexJs, app }
+module.exports = { indexHtml, indexJs, app, component }

@@ -1,7 +1,8 @@
 {
   "base": [
     "react",
-    "react-dom"
+    "react-dom",
+    "react-router-dom"
   ],
   "baseDev": [ "parcel-bundler" ]
 }

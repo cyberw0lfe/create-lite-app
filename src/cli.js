@@ -23,6 +23,7 @@ const createSrcDir = () => {
   fs.appendFile('./src/index.html', templates.indexHtml)
   fs.appendFile('./src/index.js', templates.indexJs)
   fs.appendFile('./src/App.js', templates.app)
+  fs.appendFile('./src/Component.jsx', templates.component)
 }
 
 const run = async () => {
