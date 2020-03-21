@@ -1,7 +1,7 @@
 const logger = require('./logger')
 
 const baseConfig = {
-  // loglevel: 'silent',
+  loglevel: 'silent',
   progress: true
 }
 
@@ -12,6 +12,7 @@ const execNpm = cmd => {
   })
 }
 
+// BROKEN -- once npm.load is called once, you can't load again
 const execNpmDev = cmd => {
   const npm = require('npm')
   npm.load({ ...baseConfig, 'save-dev': true }, err => {

@@ -3,6 +3,7 @@
 const { mkdirSync, writeFileSync } = require('fs')
 const npm = require('./util/npm')
 const logger = require('./util/logger')
+const exec = require('./util/exec')
 const dependencies = require('./resources/dependencies.json')
 const scripts = require('./resources/scripts.json')
 const pathMap = require('./resources/pathMap')
@@ -13,7 +14,9 @@ const installDependencies = async () => {
   
   const lintDeps = await npm.lintDeps()
   const devDeps = dependencies.baseDev.concat(lintDeps)
-  await npm.install(devDeps, true)
+  const installString = `npm install --save-dev ${devDeps.join(' ')}`
+  logger.log('Installing dev dependencies...')
+  await exec(installString)
 }
 
 const addScripts = () => {
