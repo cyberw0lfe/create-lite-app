@@ -2,6 +2,7 @@ const logger = require('./logger')
 
 const baseConfig = {
   loglevel: 'silent',
+  quiet: true,
   progress: true
 }
 
