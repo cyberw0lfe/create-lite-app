@@ -16,12 +16,13 @@ const indexJs = `import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
 
+// eslint-disable-next-line
 ReactDOM.render(<App />, document.getElementById('root'))
 `
 
 const app = `import React from 'react'
 import { BrowserRouter, Route } from 'react-router-dom'
-import Component from './Component'
+import Component from './components/Component'
 
 export default () => (
   <BrowserRouter>
@@ -39,4 +40,19 @@ export default () => (
 )
 `
 
-module.exports = { indexHtml, indexJs, app, component }
+const eslintrc = `---
+root: true
+extends:
+  - airbnb
+plugins:
+  - html
+rules:
+  semi:
+    - error
+    - never
+  jsx-quotes: 
+    - error
+    - prefer-single
+`
+
+module.exports = { indexHtml, indexJs, app, component, eslintrc }

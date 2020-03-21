@@ -4,5 +4,13 @@
     "react-dom",
     "react-router-dom"
   ],
-  "baseDev": [ "parcel-bundler" ]
+  "baseDev": [ 
+    "parcel-bundler",
+    "eslint-plugin-html",
+    "eslint-config-airbnb",
+    "eslint-plugin-import",
+    "eslint-plugin-jsx-a11y",
+    "eslint-plugin-react",
+    "eslint-plugin-react-hooks"
+  ]
 }
