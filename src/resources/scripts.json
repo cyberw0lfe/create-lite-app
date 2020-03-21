@@ -1,5 +1,7 @@
 {
-  "build": "parcel build ./src/index.html",
+  "build": "parcel build ./src/index.html --no-source-maps",
   "dev": "parcel watch ./src/index.html",
+  "lint": "eslint \"src/**.{js,jsx,html}\"",
+  "lint:fix": "eslint \"src/**.{js,jsx,html}\" --fix",
   "start": "parcel ./src/index.html"
 }
