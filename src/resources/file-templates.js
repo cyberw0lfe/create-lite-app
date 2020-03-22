@@ -55,4 +55,34 @@ rules:
     - prefer-single
 `
 
-module.exports = { indexHtml, indexJs, app, component, eslintrc }
+const readme = `# About
+\`create-lite-app\` generates a lightweight React app that has basic routing (react-router), linting (eslint) and bundling (parceljs) configured by default. The base dependencies are installed in the initialization process so all scripts should be ready run immediately.
+
+# Getting Started
+## Running Locally
+Parcel runs the app at http://localhost:1234 by default
+\`\`\`
+npm run start
+\`\`\`
+
+## Linting
+eslint is configured to extend \`airbnb\` with the following customizations:
+- Rules
+  - semicolons: never
+  - jsx-quotes: prefer single quotes
+- Plugins
+  - html
+### Locally
+Run eslint locally and see the results in the console
+\`\`\`
+npm run lint
+\`\`\`
+
+### Fix
+Run eslint locally and fix errors if possible
+\`\`\`
+npm run lint:fix
+\`\`\`
+`
+
+module.exports = { indexHtml, indexJs, app, component, eslintrc, readme }

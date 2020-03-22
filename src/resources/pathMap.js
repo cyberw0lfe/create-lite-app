@@ -3,5 +3,6 @@ module.exports = {
   indexJs: './src/index.js',
   app: './src/App.jsx',
   component: './src/components/Component.jsx',
-  eslintrc: './.eslintrc.yml'
+  eslintrc: './.eslintrc.yml',
+  readme: './README.md'
 }
