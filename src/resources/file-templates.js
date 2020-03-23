@@ -53,6 +53,12 @@ rules:
   jsx-quotes: 
     - error
     - prefer-single
+  arrow-body-style:
+    - error
+    - as-needed
+  indent:
+    - error
+    - 2
 `
 
 const readme = `# About
@@ -70,6 +76,8 @@ eslint is configured to extend \`airbnb\` with the following customizations:
 - Rules
   - semicolons: never
   - jsx-quotes: prefer single quotes
+  - arrow-body-style: enforces no braces where they can be omitted
+  - indent: enforce 2 space indent
 - Plugins
   - html
 ### Locally
