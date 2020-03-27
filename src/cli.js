@@ -22,8 +22,15 @@ const installDependencies = async () => {
 const addScripts = () => {
   logger.log('Adding scripts to package.json...')
   const package = require(`${process.cwd()}/package.json`)
-  Object.keys(scripts).forEach(script => 
-    package.scripts[script] = scripts[script])
+
+  // add npm scripts
+  const npmScripts = scripts.npm
+  Object.keys(npmScripts).forEach(script => 
+    package.scripts[script] = npmScripts[script])
+
+  // add pre-commit script
+  package['husky'] = scripts.husky
+
   writeFileSync('./package.json', JSON.stringify(package, null, 2))
 }
 
