@@ -1,0 +1,6 @@
+{
+  "dirNotEmptyError": {
+    "name": "DirNotEmpty",
+    "message": "ERROR: Run create-lite-app in an empty directory or empty git directory"
+  }
+}

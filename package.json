@@ -1,10 +1,10 @@
 {
   "name": "create-lite-app",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Command line tool for generating lightweight apps",
   "main": "src/cli.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test/"
   },
   "bin": {
     "create-lite-app": "./src/cli.js",
@@ -17,5 +17,8 @@
   "dependencies": {
     "chalk": "^3.0.0",
     "npm": "^6.14.2"
+  },
+  "devDependencies": {
+    "mocha": "^7.1.1"
   }
 }
