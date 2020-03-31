@@ -18,7 +18,7 @@ const restorePkg = () => {
   writeFileSync('./test/package.json', JSON.stringify(pkgContent, null, 2))
 }
 
-describe.skip('Add NPM Scripts', () => {
+describe('Add NPM Scripts', () => {
   before(() => {
     addScripts(`${process.cwd()}/test`)
   })

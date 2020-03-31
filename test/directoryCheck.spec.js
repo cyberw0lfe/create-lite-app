@@ -4,7 +4,7 @@ const { dirNotEmptyError } = require('../src/util/errors.json')
 
 const testPath = './test/test-directories'
 
-describe.skip('Directory Check', () => {
+describe('Directory Check', () => {
   describe('Empty Directory', () => {
     it('Should not throw an error', () => {
       assert.doesNotThrow(
