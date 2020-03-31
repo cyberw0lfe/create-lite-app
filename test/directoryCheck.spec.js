@@ -1,6 +1,6 @@
 const assert = require('assert')
 const directoryCheck = require('../src/actions/directoryCheck')
-const { dirNotEmptyError } = require('../src/util/errors.json')
+const { dirNotEmptyError } = require('../src/resources/errors.json')
 
 const testPath = './test/test-directories'
 

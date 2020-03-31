@@ -1,5 +1,5 @@
 const { readdirSync } = require('fs')
-const { dirNotEmptyError } = require('../util/errors')
+const { dirNotEmptyError } = require('../resources/errors')
 
 const ignoreFiles = [ '.git', '.gitignore' ]
 const checkFile = file => !ignoreFiles.includes(file)
