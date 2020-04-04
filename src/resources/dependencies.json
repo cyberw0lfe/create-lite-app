@@ -6,12 +6,20 @@
   ],
   "baseDev": [ 
     "parcel-bundler",
+    "husky",
     "eslint-plugin-html",
     "eslint-config-airbnb",
     "eslint-plugin-import",
     "eslint-plugin-jsx-a11y",
     "eslint-plugin-react",
     "eslint-plugin-react-hooks",
-    "husky"
+    "@babel/cli",
+    "@babel/core",
+    "@babel/preset-env",
+    "@babel/register",
+    "mocha",
+    "chai",
+    "enzyme",
+    "enzyme-adapter-react-16"
   ]
 }

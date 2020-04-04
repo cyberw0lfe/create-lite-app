@@ -40,6 +40,29 @@ export default () => (
 )
 `
 
+const test = `import React from 'react'
+import { configure, shallow } from 'enzyme'
+import { expect } from 'chai'
+import Adapter from 'enzyme-adapter-react-16'
+import Component from '../components/Component'
+
+configure({ adapter: new Adapter() })
+
+describe('Component test', () => {
+  it('Renders create-lite-app message', () => {
+    const wrapper = shallow(<Component />)
+    const cla = <div>Create Lite App</div>
+    expect(wrapper.contains(cla)).to.equal(true)
+  })
+})`
+
+const babelrc = `{
+  "presets": [
+    "@babel/preset-env",
+    "@babel/preset-react"
+  ]
+}`
+
 const eslintrc = `---
 root: true
 extends:
@@ -62,13 +85,19 @@ rules:
 `
 
 const readme = `# About
-\`create-lite-app\` generates a lightweight React app that has basic routing (react-router), linting (eslint) and bundling (parceljs) configured by default. The base dependencies are installed in the initialization process so all scripts should be ready run immediately.
+\`create-lite-app\` generates a lightweight React app that has basic routing (react-router), testing (mocha, chai, enzyme), linting (eslint) and bundling (parceljs) configured by default. The dependencies are installed in the initialization process so all scripts are ready to run immediately.
 
 # Getting Started
 ## Running Locally
 Parcel runs the app at http://localhost:1234 by default
 \`\`\`
 npm run start
+\`\`\`
+
+## Testing
+\`mocha\` is used as the test runner with the \`chai\` assertion library and \`enzyme\` for testing React components
+\`\`\`
+npm run test
 \`\`\`
 
 ## Linting
@@ -93,4 +122,6 @@ npm run lint:fix
 \`\`\`
 `
 
-module.exports = { indexHtml, indexJs, app, component, eslintrc, readme }
+module.exports = { 
+  indexHtml, indexJs, app, component, test, babelrc, eslintrc, readme
+}

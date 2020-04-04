@@ -7,5 +7,6 @@ module.exports = (path = process.cwd()) => {
   logger.log('Creating src directory...')
   mkdirSync(`${path}/src`)
   mkdirSync(`${path}/src/components`)
+  mkdirSync(`${path}/src/test`)
   Object.keys(pathMap).forEach(template => writeFileSync(`${path}/${pathMap[template]}`, templates[template]))
 }
