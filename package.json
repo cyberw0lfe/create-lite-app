@@ -1,6 +1,6 @@
 {
   "name": "create-lite-app",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Command line tool for generating lightweight apps",
   "main": "src/cli.js",
   "scripts": {
@@ -20,5 +20,9 @@
   },
   "devDependencies": {
     "mocha": "^7.1.1"
-  }
+  },
+  "keywords": [ 
+    "create", "lite", "app", "light", "application", "react", "parcel",
+    "mocha", "chai", "enzyme", "eslint", "husky"
+  ]
 }
