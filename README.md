@@ -12,8 +12,8 @@ npm i -g create-lite-app
 ```
 mkdir my-lite-app
 cd my-lite-app
-create-lite-app #or simply 'cla'
-npm run start
+create-lite-app # or simply 'cla'
+npm run start # or 'yarn start'
 ```
 
 ## Features
