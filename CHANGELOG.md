@@ -1,4 +1,8 @@
 # `create-lite-app` changelog
+## 0.0.6
+- add yarn support
+- fix bug where testing was missing a dev dependency
+
 ## 0.0.5
 - add testing to generated project using `mocha`, `chai` and `enzyme`
 - add changelog
