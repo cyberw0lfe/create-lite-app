@@ -1,6 +1,6 @@
 {
   "name": "create-lite-app",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Command line tool for generating lightweight apps",
   "main": "src/cli.js",
   "scripts": {
@@ -26,6 +26,8 @@
     "create",
     "lite",
     "app",
+    "create app",
+    "create react app",
     "light",
     "application",
     "react",

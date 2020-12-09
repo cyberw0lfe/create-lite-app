@@ -15,9 +15,13 @@ const parseLintDeps = (depString) => {
   return depString.split('\n').map(string => {
     if(string.includes(':')){
       const split = string.split(':')
-      const dep = split[0].trim().replace(/'/g, '')
-      const version = getLintDepVersion(split[1])
-      return `${dep}@${version}`
+      const dep = split[0]
+        .trim()
+        .replace(/'/g, '')
+        .replace(/{/, '')
+      // const version = getLintDepVersion(split[1])
+      // return `${dep}@${version}`
+      return dep
     }
   }).filter(dep => dep)
 }
