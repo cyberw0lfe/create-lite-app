@@ -14,6 +14,7 @@ const indexHtml = `<!DOCTYPE html>
 
 const indexJs = `import React from 'react'
 import ReactDOM from 'react-dom'
+import 'regenerator-runtime/runtime'
 import App from './App'
 
 // eslint-disable-next-line
