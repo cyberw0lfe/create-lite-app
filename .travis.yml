@@ -1,0 +1,9 @@
+deploy:
+  provider: npm
+  email: awolfesoftware@gmail.com
+  api_key:
+    secure: mPfBueidK7iS4fNnq8gTwTlmkOodErnzLGUCAFrV9Cr5BNXFwBrIrjaa7ngMmBNSwC3z7Kf5xT7OAJC1QQRInQeu2u48kC3jPgR0xlXeWnzLyAvlg5LQ7nm1tMNPdQBymnNm6uoOcNfy5AxOrt/oiP28ClJp66/kYy3tHIDTRlSs/C+BQo2pPzqGqZVPPCMO/txcW45XsfWx8QkP07SfwP38EEJnCKQf6E2vGDYic0UQjWrDJR1KR3ZXY0yMZ9q1ZvnPEVR45qOnv53ZQbh3QtRZ24h8UwnRymNEoJpjlDpLEGJ3ZqeMfV3sJPLxIG1BvraVfwdRpdNqVxKt5A9RMgwiNDEOsBdJWBuFB+wRihzhGfowEU/Ydf4LJwnk1lRHmQ+h2RUJWB6vdPVo8Lm3LKaBcRLD/2/ceWSS8hmHRxtXCmd2Us3ObZFCSihGZVz0Q9LLtmMIcbMsoSa4BFJv5WX0oF6nu+44xzOnsSLoWeWeXTpqeubqpQp9cQ75eul0pbLQpNOHu058CHJ32OVNwpRYfpmotvgAjP9QqOSsmTRsFtYqWYgdSuAJLEHxD1DECqwQjsHecYuFTZfRbzpS6I52JsnEUB58rmGICd9/LDoEb23onS0yYvBW7AV/Pbokw735lLoSQ+gipmJO3bqvzG20mfGiWmsAOzRbPimbPUU=
+  on:
+    repo: adamtwolfe/create-lite-app
+    branch: master
+  skip_cleanup: 'true'
