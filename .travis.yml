@@ -4,8 +4,7 @@ node_js:
 deploy:
   provider: npm
   email: awolfesoftware@gmail.com
-  api_key:
-    secure: iee4K/zsZpY4XSNdh1sRn06IUtlRAewvtYUSywmuGBaeIajGCfyJrvOhEK8mjW9Svx/UR+iRNFl9o30gAvHWtDzqcUvfptslZ9rIIyakA4z0dkdXrxSkV+KrfkOEFfp/+v/khkakfXYpGSXZqF2ukZf/nhyBROv4FJBYdwLjbrB4TjU46lTKnzbGyB4z+yzxwtD7+xt/k7OboUvlh+oYDu6j+3XqRKzmuCl/wlJoPNplwSpfvoG4Rdu4BDubjYSVN5BPAmfRd0Nynu2MS8pNhxr1HRM6XS/NkC3YoMqHkM0PMWDW4RNBIQGip+Al05YzUS/yQprCeU2/1OdbDDKzy36glqE3klFaV0kP/eNBMVjhnyjFcCDkwM98I1hTY+1eIjMWkp+dYpmKBJgIKRiY+QshTZt/Dcg0dMUS0/TPysb+ScOVbvUSnjY/HwBwx5cklbdg2R5q6jUvcm5t+lJ+u+JEv5UI2w0+RoTAaYdsj7RU2+ExOVANls+uesSjvte81QMYsfXleRq1fkbyk5rsVIDHiAexxyN2lT70Z2qnFlnvjBnv7Nu91GivMpntvtIBFXwhccu0R5sA/rwFetlr5rRpXGMSCG331261svKgJJxKTeaMsKaW5Q+8q/PASImHNH1mgGgjHcTQ1vXkC1HdWsyvdQ3/R3u/2cScz3JuuIc=
+  api_key: $NPM_KEY
   on:
     repo: adamtwolfe/create-lite-app
     branch: master
